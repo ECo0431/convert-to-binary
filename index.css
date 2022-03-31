@@ -60,8 +60,10 @@ article{
   margin-left: 20px;
 }
 
-.binary{
+.binary{ 
   margin-bottom: 20px;
+  width: 300px;
+  text-align: center;
 }
 
 .box-txt-all-caracter {
@@ -167,6 +169,12 @@ article{
     flex-direction: column;
     border: 1px solid #65d36e;
     padding: 10px;
+    max-width: 375px;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+  
 }
 
 .close {
