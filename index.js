@@ -2,12 +2,15 @@ let elementAdded = 0;
 const CONTAINER = document.querySelector(".container");
 const INPUT = document.querySelector("#input");
 const BUTTON = document.querySelector("button");
+const BODY = document.querySelector(".body");
 let listBoxValues = [];
 let listBtnClose = [];
 let listCharBinary = [];
 let charBinary = [];
 let boxTxtAllCaracter = [];
 let boxTxtAllBinary = [];
+let boxAllOneCaracter = [];
+let nbrCaracter = 0;
 
 BUTTON.addEventListener("click", addNewBoxValues);
 
@@ -18,6 +21,10 @@ function addNewBoxValues() {
   btnCloseEvent();
   caracterBoxAndBinaryBox();
   charBinary = [];
+  nbrCaracter += INPUT.value.length;
+  if (nbrCaracter > 4) {
+    BODY.classList.add("new-body");
+  }
   elementAdded++;
 }
 
@@ -39,6 +46,8 @@ function sectionBoxValues() {
     <section id="box-txt-all-caracter-${elementAdded}" class="box-txt-all-caracter box-txt-all-caracter">
       <div class="caracter">
         ${INPUT.value}
+        <div id="box-all-one-caracter-${elementAdded}" class="box-all-one-caracter">
+        </div>
       </div>
     </section>
     <section id="box-txt-all-binary-${elementAdded}" class="box-txt-all-binary box-txt-all-binary">
@@ -67,10 +76,13 @@ function caracterBoxAndBinaryBox() {
   boxTxtAllBinary[elementAdded] = document.querySelector(
     `#box-txt-all-binary-${elementAdded}`
   );
+  boxAllOneCaracter[elementAdded] = document.querySelector(
+    `#box-all-one-caracter-${elementAdded}`
+  );
 
   console.log(boxTxtAllCaracter[elementAdded]);
   for (let i = 0; i < INPUT.value.length; i++) {
-    boxTxtAllCaracter[elementAdded].innerHTML += `
+    boxAllOneCaracter[elementAdded].innerHTML += `
     <div class="one-carater">
       <div class="nbr-caracter">
           ${i}
@@ -282,8 +294,31 @@ function toBianary() {
         charBinary[i] = " 00111001";
         break;
       case "é":
-        charBinary[i] =
-          " 0010011001100101011000010110001101110101011101000110010100111011";
+        charBinary[i] = " 11000011 10101001";
+        break;
+      case "è":
+        charBinary[i] = " 11000011 10101000";
+        break;
+      case "ë":
+        charBinary[i] = " 11000011 10101011";
+        break;
+      case "ê":
+        charBinary[i] = " 11000011 10101010";
+        break;
+      case "ô":
+        charBinary[i] = " 11000011 10110100";
+        break;
+      case "ö":
+        charBinary[i] = " 11000011 10110110";
+        break;
+      case "î":
+        charBinary[i] = " 11000011 10101110";
+        break;
+      case "ï":
+        charBinary[i] = " 11000011 10101111";
+        break;
+      case "à":
+        charBinary[i] = " 11000011 10100000";
         break;
       default:
         console.log("valeur non listé");

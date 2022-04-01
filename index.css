@@ -6,6 +6,10 @@
   list-style-type: none;
 }
 
+/* body{
+  height: 100vh;
+} */
+
 .body {
   background: linear-gradient(#0c1b0c, #1d4622);
   display: flex;
@@ -14,6 +18,10 @@
   justify-content: center;
   flex-direction: row-reverse;
   height: 100vh;
+}
+
+.new-body{
+  height: 100% !important;
 }
 
 .box-form{
@@ -58,6 +66,9 @@ article{
 
 .caracter{
   margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .binary{ 
@@ -186,4 +197,8 @@ article{
   display: none !important;
 }
 
-/*# sourceMappingURL=style.css.map */
+.box-all-one-caracter{
+  display: flex;
+  margin-top: 20px;
+}
+
